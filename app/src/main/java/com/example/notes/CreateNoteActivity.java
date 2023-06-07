@@ -14,7 +14,7 @@ public class CreateNoteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.create_note);
+        setContentView(R.layout.activity_create_note);
 
         DBHelper dbHelper = new DBHelper(this);
 
