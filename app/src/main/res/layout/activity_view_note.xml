@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_note_title"
+        android:text="Note Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_note_body"
+        android:text="Note Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_delete_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Удалить заметку" />
+
+    <Button
+        android:id="@+id/btn_edit_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Редактировать заметку" />
+
+</LinearLayout>
