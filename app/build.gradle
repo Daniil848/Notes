@@ -5,6 +5,7 @@ plugins {
 android {
     namespace 'com.example.notes'
     compileSdk 33
+    compileOptions.encoding = 'UTF-8'
 
     defaultConfig {
         applicationId "com.example.notes"

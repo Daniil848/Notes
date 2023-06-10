@@ -1,6 +1,5 @@
 package com.example.notes;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -38,7 +37,6 @@ public class EditNoteActivity extends AppCompatActivity {
 
         btnCancelEditing.setOnClickListener(v -> finish());
 
-        btnDeleteNote.setOnClickListener(v -> showDeleteConfirmationDialog());
 }
 
     private void saveNote() {
@@ -61,14 +59,5 @@ public class EditNoteActivity extends AppCompatActivity {
         finish();
     }
 
-    private void showDeleteConfirmationDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Вы действительно хотите удалить заметку?");
-        builder.setPositiveButton("Удалить", (dialog, which) -> {
-            note.delete(this);
-            finish();
-        });
-        builder.setNegativeButton("Закрыть", null);
-        builder.show();
-    }
+
 }

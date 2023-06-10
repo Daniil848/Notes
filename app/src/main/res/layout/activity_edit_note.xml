@@ -29,12 +29,6 @@
         android:text="Сохранить заметку" />
 
     <Button
-        android:id="@+id/btn_delete_note"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Удалить заметку" />
-
-    <Button
         android:id="@+id/btn_cancel_editing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

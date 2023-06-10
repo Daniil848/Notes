@@ -1,0 +1,75 @@
+@startuml
+
+class MainActivity {
+    -notesList: ArrayList<Note>
+    -notesListAdapter: NotesListAdapter
+    +onCreate(Bundle): void
+    +onResume(): void
+}
+
+class Note {
+    -id: long
+    -title: String
+    -body: String
+    +Note()
+    +Note(long, String, String)
+    +getId(): long
+    +setId(long): void
+    +getTitle(): String
+    +setTitle(String): void
+    +getBody(): String
+    +setBody(String): void
+    +getAllNotes(Context): List<Note>
+    +save(Context): void
+    +delete(Context): void
+}
+
+class NotesListAdapter {
+    -context: Context
+    -layoutResourceId: int
+    -data: List<Note>
+
+    +NotesListAdapter(Context, int, List<Note>)
+    +getView(int, View, ViewGroup): View
+}
+
+class ViewNoteActivity {
+    -note: Note
+    +onCreate(Bundle): void
+    +showDeleteConfirmationDialog(): void
+}
+
+class CreateNoteActivity {
+    -noteTitleEditText: EditText
+    -noteBodyEditText: EditText
+    +onCreate(Bundle): void
+}
+
+class EditNoteActivity {
+    -etNoteTitle: EditText
+    -etNoteBody: EditText
+    -note: Note
+    +onCreate(Bundle): void
+    +saveNote(): void
+}
+
+class DBHelper {
+    -DATABASE_NAME: String
+    -DATABASE_VERSION: int
+    +DBHelper(Context)
+    +onCreate(SQLiteDatabase): void
+    +addNote(String, String): boolean
+    +onUpgrade(SQLiteDatabase, int, int): void
+}
+
+Note --> DBHelper
+NotesListAdapter --> Note
+MainActivity -> NotesListAdapter : notesListAdapter
+MainActivity -> Note : notesList
+CreateNoteActivity --> DBHelper
+EditNoteActivity -> Note : note
+EditNoteActivity --> DBHelper
+ViewNoteActivity -> Note : note
+ViewNoteActivity --> DBHelper
+
+@enduml
